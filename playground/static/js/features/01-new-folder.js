@@ -14,5 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
         });
 
         new_folder_view.show();
+        new_folder_view.on("submit", (submit_data) => {
+            console.log(submit_data);
+        });
     });
 });

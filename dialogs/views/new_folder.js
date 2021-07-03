@@ -32,24 +32,13 @@ class NewFolderView extends View {
 
     events() {
         let event_map = {
-            "click .close": "on_close",
-            "submit": "on_submit_form",
-            "click .create": "on_create",
+            'click .submit': 'on_submit'
         }
 
         return event_map;
     }
 
-    on_close(events) {
-
-    }
-
-    on_submit_form(event) {
-        event.preventDefault();
-        this.on_create(event);
-    }
-
-    on_create(event) {
+    on_submit(event) {
         let title;
 
         title = this.el.querySelector('[name=title]').value
@@ -61,10 +50,17 @@ class NewFolderView extends View {
             "submit",
             {'title': title, 'parent': this.parent}
         );
+
+        this.hide();
+        this.undelegateEvents();
     }
 
     show() {
         this.modal.show();
+    }
+
+    hide() {
+        this.modal.hide();
     }
 }
 
