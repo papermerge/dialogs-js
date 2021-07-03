@@ -18,6 +18,8 @@ class RenameView extends View {
         (i.e. Folder class instance) has `parent.id` attribute.
         */
         super(options);
+        let that = this;
+
         // The only requirement for node is to have `title` attribute
         this.node = node;
         this.options = options;
@@ -28,6 +30,9 @@ class RenameView extends View {
         // instanciate bootstrap's modal
         // initially modal is set to hidden
         this.modal = new Modal(this.el);
+        this.el.addEventListener('hide.bs.modal', function(event) {
+            that.undelegateEvents();
+        });
     }
 
     get default_template_name() {
