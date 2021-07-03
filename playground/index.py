@@ -32,6 +32,11 @@ def create_app(delay_seconds=0, no_cache=False):
         url_prefix='/01-new-folder'
     )
 
+    app.register_blueprint(
+        create_blueprint('02-default-template', request_delay=0.1),
+        url_prefix='/02-default-template'
+    )
+
     @app.route('/')
     def index():
         return render_template(

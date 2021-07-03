@@ -5,7 +5,10 @@ import { renderman } from "../renderman";
 
 class NewFolderView extends View {
 
-    constructor({parent, options}) {
+    constructor({
+        parent=undefined,
+        options={'el': document.querySelector('.new-folder-view')}
+    }={}) {
         /*
         parent is instance of Folder class whose implementation
         is irrelevent. The imporant part is that parent

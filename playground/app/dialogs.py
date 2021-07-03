@@ -12,11 +12,11 @@ global_context = {
     'features': [
         {
             'url': '/01-new-folder',
-            'title': '01 - New Folder basic usage'
+            'title': '01 - New Folder Basic Usage'
         },
         {
-            'url': '/02-sample',
-            'title': '02 - Sample'
+            'url': '/02-default-template',
+            'title': '02 - Default Template'
         },
     ]
 }
@@ -56,9 +56,6 @@ def create_blueprint(name, request_delay=0):
     request. With `request_delay` > 0 we simulate slow requests.
     """
 
-    # Reusable app. It provides views for following URLS:
-    #  - /
-    #  - /upload/
     blueprint = Blueprint(
         name,  # unique name
         name,  # import_name
@@ -75,20 +72,5 @@ def create_blueprint(name, request_delay=0):
             template_name,
             **global_context
         )
-
-    @blueprint.route('/upload/', methods=['POST'])
-    def upload():
-        time.sleep(request_delay)
-        file = request.files['file']
-        parent_id = request.form['parent_id']
-        lang = request.form['lang']
-        return {
-            'document': {
-                'id': random.randint(0, 1000),
-                'title': file.filename,
-                'parent_id': parent_id,
-                'lang': lang
-            }
-        }
 
     return blueprint
