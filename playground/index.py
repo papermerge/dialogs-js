@@ -28,8 +28,8 @@ def create_app(delay_seconds=0, no_cache=False):
     app.config['DEBUG'] = True
 
     app.register_blueprint(
-        create_blueprint('01-sample', request_delay=0.1),
-        url_prefix='/01-sample'
+        create_blueprint('01-new-folder', request_delay=0.1),
+        url_prefix='/01-new-folder'
     )
 
     @app.route('/')

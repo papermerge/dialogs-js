@@ -11,8 +11,8 @@ from flask import (
 global_context = {
     'features': [
         {
-            'url': '/01-sample',
-            'title': '01 - Sample'
+            'url': '/01-new-folder',
+            'title': '01 - New Folder basic usage'
         },
         {
             'url': '/02-sample',

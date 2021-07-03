@@ -1,4 +1,5 @@
 import { View } from  "@papermerge/symposium";
+import { Modal } from "bootstrap";
 import { renderman } from "../renderman";
 
 
@@ -10,8 +11,15 @@ class NewFolderView extends View {
         is irrelevent. The imporant part is that parent
         (i.e. Folder class instance) has `parent.id` attribute.
         */
+        super(options);
         this.parent = parent;
         this.options = options;
+
+        this.render();
+
+        // instanciate bootstrap's modal
+        // initially modal is set to hidden
+        this.modal = new Modal(this.el);
     }
 
     get default_template_name() {
@@ -25,11 +33,15 @@ class NewFolderView extends View {
     events() {
         let event_map = {
             "click .close": "on_close",
-            "submit": "on_submit_form"
+            "submit": "on_submit_form",
             "click .create": "on_create",
         }
 
         return event_map;
+    }
+
+    on_close(events) {
+
     }
 
     on_submit_form(event) {
@@ -49,6 +61,10 @@ class NewFolderView extends View {
             "submit",
             {'title': title, 'parent': this.parent}
         );
+    }
+
+    show() {
+        this.modal.show();
     }
 }
 

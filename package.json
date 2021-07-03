@@ -38,6 +38,7 @@
     "exports-loader": "^0.7.0",
     "imagesloaded": "^4.1.4",
     "jquery": "^3.6.0",
+    "bootstrap": "^5.0.2",
     "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.2",

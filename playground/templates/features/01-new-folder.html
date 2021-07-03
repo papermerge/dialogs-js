@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block extra_js %}
+  <script type="module" src="static/js/features/01-new-folder.js"></script>
+{% endblock %}
+
+{% block content %}
+    <main class="container py-3">
+        <h1>New Folder</h1>
+        <p>
+          This feature demonstrates the use of new folder dialog
+        </p>
+        <div class="d-flex">
+            <button type="button" class="new-folder-btn" class="btn btn-light m-2">New Folder</button>
+        </div>
+        <div class="showroom container-fluid">
+            <div class="row"> <!-- row -->
+                <div class="col-12">
+                    <div class="new-folder-view"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
