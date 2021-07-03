@@ -1,6 +1,5 @@
 import os
 import time
-import random
 
 from flask import (
     Blueprint,
@@ -17,6 +16,10 @@ global_context = {
         {
             'url': '/02-default-template',
             'title': '02 - Default Template'
+        },
+        {
+            'url': '/03-parent',
+            'title': '03 - Parent Select'
         },
     ]
 }

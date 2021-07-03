@@ -37,6 +37,11 @@ def create_app(delay_seconds=0, no_cache=False):
         url_prefix='/02-default-template'
     )
 
+    app.register_blueprint(
+        create_blueprint('03-parent', request_delay=0.1),
+        url_prefix='/03-parent'
+    )
+
     @app.route('/')
     def index():
         return render_template(
