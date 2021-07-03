@@ -15,7 +15,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
         new_folder_view.show();
         new_folder_view.on("submit", (submit_data) => {
+            // submitted data contains
+            // submitted_data['title'] <- new folder title
+            // submitted_data['parent'] <- parent object (has `id` attribute)
             console.log(submit_data);
+
         });
     });
 });
