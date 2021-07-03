@@ -1,0 +1,24 @@
+<div class="modal modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">
+          Rename
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+      <div class="modal-body">
+            <div class="modal-body vertical">
+              <form id="new-folder-form" method="POST">
+                  <div class="form-group">
+                    <label for="title">New name:</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{node.title}}">
+                  </div>
+              </form>
+            </div>
+      </div>
+      <div class="modal-footer">
+            <button class="btn btn-success action margin-xs submit">Rename</button>
+            <button data-bs-dismiss="modal" class="btn margin-xs btn-secondary cancel">Cancel</button></a>
+      </div>
+  </div>
+</div>

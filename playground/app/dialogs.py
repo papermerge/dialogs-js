@@ -21,6 +21,10 @@ global_context = {
             'url': '/03-parent',
             'title': '03 - Parent Select'
         },
+        {
+            'url': '/04-rename',
+            'title': '04 - Rename View'
+        },
     ]
 }
 

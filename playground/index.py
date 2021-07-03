@@ -41,6 +41,10 @@ def create_app(delay_seconds=0, no_cache=False):
         create_blueprint('03-parent', request_delay=0.1),
         url_prefix='/03-parent'
     )
+    app.register_blueprint(
+        create_blueprint('04-rename', request_delay=0.1),
+        url_prefix='/04-rename'
+    )
 
     @app.route('/')
     def index():

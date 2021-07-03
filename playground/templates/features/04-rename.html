@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block extra_js %}
+  <script type="module" src="static/js/features/04-rename.js"></script>
+{% endblock %}
+
+{% block content %}
+    <main class="container py-3">
+        <h1>Rename Document or Folder</h1>
+        <p>
+          This feature demonstrates how use RenameView.
+        </p>
+        <div class="d-flex">
+            <select class="node-select form-select my-2">
+                <option value="Invoices.pdf">Invoices.pdf</option>
+                <option value="Test.jpg">Test.jpg</option>
+                <option value="Scan.tiff">Scan.tiff</option>
+                <option value="">No Parent/Home</option>
+            </select>
+        </div>
+        <div class="d-flex">
+            <button type="button" class="rename-btn btn btn-light my-2">Rename</button>
+        </div>
+        <div class="showroom container-fluid">
+            <div class="row"> <!-- row -->
+                <div class="col-12">
+                    <div class="rename-view"></div>
+                    <div class="nodes"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
