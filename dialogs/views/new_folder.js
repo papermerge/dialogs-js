@@ -35,7 +35,8 @@ class NewFolderView extends View {
 
     events() {
         let event_map = {
-            'click .submit': 'on_submit'
+            "click .submit": "on_submit",
+            "submit": "on_submit"
         }
 
         return event_map;
@@ -43,6 +44,9 @@ class NewFolderView extends View {
 
     on_submit(event) {
         let title;
+
+        event.preventDefault();
+        console.log("submit");
 
         title = this.el.querySelector('[name=title]').value
         if (!title || title.trim().length == 0) {
