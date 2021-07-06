@@ -15,6 +15,8 @@ class NewFolderView extends View {
         (i.e. Folder class instance) has `parent.id` attribute.
         */
         super(options);
+        let that = this;
+
         this.parent = parent;
         this.options = options;
 
@@ -23,6 +25,12 @@ class NewFolderView extends View {
         // instanciate bootstrap's modal
         // initially modal is set to hidden
         this.modal = new Modal(this.el);
+
+        this.el.addEventListener('hide.bs.modal', () => {
+            //detach event handlers after modal is closed
+            // with "cancel" action
+            that.undelegateEvents();
+        });
     }
 
     get default_template_name() {
